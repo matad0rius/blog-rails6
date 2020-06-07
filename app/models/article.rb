@@ -4,4 +4,6 @@ class Article < ApplicationRecord
     validates :description, presence: true, length: {minimum:10, maximum: 300}
 
     belongs_to :user
+    has_many :article_categories
+    has_many :categories, throught: :article_categories
 end
